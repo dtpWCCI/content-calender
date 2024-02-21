@@ -1,0 +1,28 @@
+# Method Request-URI HTTP-Version
+# Header-field: Header-value
+# Request-Body
+
+### Find all content
+GET http://localhost:8080/api/content
+
+### Find content by id
+GET http://localhost:8080/api/content/4
+
+### Create content
+POST http://localhost:8080/api/content
+Content-Type: application/json
+
+{
+    "id":  4,
+    "title": "Fourth Content",
+    "desc": "This is the fourth content",
+    "status": "IDEA",
+    "contentType": "ARTICLE",
+    "dateCreated": "2024-02-19T00:00:00",
+    "dateUpdated": "2024-02-19T00:00:00",
+    "url": "https://example.com"
+}
+
+
+```
+
