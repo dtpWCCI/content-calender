@@ -25,16 +25,22 @@ public class ContentCollectionRepository {
 
     }
     public void save(Content content) {
+        contentList.removeIf(c -> c.id().equals(content.id()));
         contentList.add(content);
     }
 
     @PostConstruct
     private void init() {
-        contentList.add(new Content(1, "First Content", "This is the first content", Content.Status.IDEA, Content.Type.ARTICLE, LocalDateTime.now(), null, ""));
-        contentList.add(new Content(2, "Second Content", "This is the second content", Content.Status.IDEA, Content.Type.ARTICLE, LocalDateTime.now(), null, ""));
-        contentList.add(new Content(3, "Third Content", "This is the third content", Content.Status.IDEA, Content.Type.ARTICLE, LocalDateTime.now(), null, ""));
-
+        contentList.add(new Content(1, "https://www.baeldung.com", "Baeldung", "Learning", Content.Status.PUBLISHED, Content.Type.ARTICLE, LocalDateTime.now(), LocalDateTime.now()));
+        contentList.add(new Content(2, "https://www.baeldung.com", "Baeldung", "Learning", Content.Status.PUBLISHED, Content.Type.ARTICLE, LocalDateTime.now(), LocalDateTime.now()));
+        contentList.add(new Content(3, "https://www.baeldung.com", "Baeldung", "Learning", Content.Status.PUBLISHED, Content.Type.ARTICLE, LocalDateTime.now(), LocalDateTime.now()));
     }
 
-
+    public boolean existsById(Integer id) {
+        return contentList.stream().filter(c -> c.id().equals(id)).count() == 1;
+    }
+    
+    public void deleteById(Integer id) {
+        contentList.removeIf(c -> c.id().equals(id));
+    }
 }

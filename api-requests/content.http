@@ -6,9 +6,9 @@
 GET http://localhost:8080/api/content
 
 ### Find content by id
-GET http://localhost:8080/api/content/4
+GET http://localhost:8080/api/content/1
 
-### Create content
+### Create new content
 POST http://localhost:8080/api/content
 Content-Type: application/json
 
@@ -24,5 +24,23 @@ Content-Type: application/json
 }
 
 
+
+### Create new content by id
+PUT http://localhost:8080/api/content/1
+Content-Type: application/json
+
+{
+    "id":  1,
+    "title": "First Post",
+    "desc": "This is the first POST  content",
+    "status": "IDEA",
+    "contentType": "ARTICLE",
+    "dateCreated": "2024-02-19T00:00:00",
+    "dateUpdated": "2024-02-19T00:00:00",
+    "url": "https://example.com"
+}
+
+### DELETE content by id
+DELETE http://localhost:8080/api/content/4
 ```
 
