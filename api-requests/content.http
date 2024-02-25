@@ -14,7 +14,7 @@ Content-Type: application/json
 
 {
     "id":  4,
-    "title": "Fourth Content",
+    "title": "",
     "desc": "This is the fourth content",
     "status": "IDEA",
     "contentType": "ARTICLE",
@@ -26,7 +26,7 @@ Content-Type: application/json
 
 
 ### Create new content by id
-PUT http://localhost:8080/api/content/1
+PUT http://localhost:8080/api/content/4
 Content-Type: application/json
 
 {

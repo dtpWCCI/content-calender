@@ -2,13 +2,15 @@ package com.fdcalender.contentcalender.model;
 
 import java.time.LocalDateTime;
 
-import javax.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotBlank;
+
+
 
 
 public record Content(
-    @NotBlank
     Integer id,
     String url,
+    @NotBlank
     String title,
     String desc,
     Status status,

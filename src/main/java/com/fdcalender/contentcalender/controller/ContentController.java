@@ -3,12 +3,12 @@ package com.fdcalender.contentcalender.controller;
 import com.fdcalender.contentcalender.model.Content;
 import com.fdcalender.contentcalender.repository.ContentCollectionRepository;
 import org.springframework.http.HttpStatus;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
 
 import java.util.List;
 
-import javax.validation.Valid;
 
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RestController;
@@ -40,7 +40,7 @@ public class ContentController {
 
     @ResponseStatus(HttpStatus.CREATED)
     @PostMapping("")
-    public void create(@Valid @RequestBody Content content) {
+    public void create(@Validated @RequestBody Content content) {
         repository.save(content);
     }
 
